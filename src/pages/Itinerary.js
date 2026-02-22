@@ -3,13 +3,6 @@ import { useState } from 'react';
 import BookingForm from '../components/BookingForm';
 function Itinerary({ selectedDestinations, customPlans, onRemoveDestination, onAddCustomPlan, onUpdateStatus }) {
   const [showForm, setShowForm] = useState(false);
-  const [activeTab, setActiveTab] = useState('planned');
-  const filteredDestinations = selectedDestinations.filter(
-    dest => dest.status === activeTab
-  );
-  const filteredPlans = customPlans.filter(
-    plan => plan.status === activeTab
-  );
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
